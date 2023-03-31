@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import PyPDF2
 from .forms import StudyPlanForm
+from .models import StudyPlan
 
 def upload_study_plan(request):
     if request.method == 'POST':
@@ -17,3 +18,8 @@ def upload_study_plan(request):
     else:
         form = StudyPlanForm()
     return render(request, 'upload.html', {'form': form})
+
+def study_plan_list(request):
+    study_plans = StudyPlan.objects.all()
+    context = {'study_plans': study_plans}
+    return render(request, 'study_plan_list.html', context)

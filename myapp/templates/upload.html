@@ -1,7 +1,35 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Upload Study Plan</h1>
-<form method="post" enctype="multipart/form-data">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Submit</button>
+<h1 style="text-align: center; font-size: 2.5em; margin-top: 50px">
+  Upload Study Plan
+</h1>
+<form
+  method="post"
+  enctype="multipart/form-data"
+  style="max-width: 500px; margin: 50px auto"
+>
+  {% csrf_token %}
+  <label for="id_name">Name:</label>
+  {{ form.name }}
+  <br />
+  <label for="id_file">File:</label>
+  {{ form.file }}
+  <br />
+  <label for="id_score">Score:</label>
+  {{ form.score }}
+  <br />
+  <button
+    type="submit"
+    style="
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    "
+  >
+    Submit
+  </button>
 </form>
 {% endblock %}

@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path
 #from ..myapp.views import upload_study_plan
 from myapp.views import upload_study_plan
+from myapp.views import study_plan_list
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('upload/', upload_study_plan, name='upload_study_plan')
+    path('upload/', upload_study_plan, name='upload_study_plan'),
+      path('study-plans/', study_plan_list, name='study_plan_list')
 ]

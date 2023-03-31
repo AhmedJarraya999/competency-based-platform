@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block title %} All Study Plans {% endblock %}
+{%block content %}
+<h1>All Study Plans</h1>
+<ul>
+  {% for study_plan in study_plans %}
+  <li><a href="{{ study_plan.file.url }}">{{ study_plan.name }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}
