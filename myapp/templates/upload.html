@@ -1,4 +1,4 @@
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <h1>Upload Study Plan</h1>
 <form method="post" enctype="multipart/form-data">
   {% csrf_token %} {{ form.as_p }}
